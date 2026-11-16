@@ -1,0 +1,99 @@
+{
+  "demo_type": "handwritten_fixtures_no_llm",
+  "reports": [
+    {
+      "schema_version": 1,
+      "problem": "divisible_pairs",
+      "candidate": "divisible_pairs_buggy.py",
+      "candidate_sha256": "6403ca3473252c714fe483f078baee26cbec3032cd35885f0b5b4608949f1655",
+      "seed": 42,
+      "random_cases_requested": 50,
+      "timeout_seconds": 2.0,
+      "oracle": "reviewed_brute_force_v1",
+      "cases_available": 56,
+      "cases_executed": 3,
+      "cases_passed": 2,
+      "status": "failed",
+      "failure": {
+        "case_index": 2,
+        "input": {
+          "a": [
+            1,
+            2
+          ],
+          "k": 3
+        },
+        "expected": 1,
+        "actual": 2,
+        "kind": "wrong_answer",
+        "execution": {
+          "status": "ok",
+          "value": 2,
+          "stdout": "2\r\n",
+          "stderr": "",
+          "returncode": 0
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "problem": "divisible_pairs",
+      "candidate": "divisible_pairs_fixed.py",
+      "candidate_sha256": "fbe0aae43b33db58f0297fde10ff778a4e6ba960bd35d3e62cf38ed35d8b461a",
+      "seed": 42,
+      "random_cases_requested": 50,
+      "timeout_seconds": 2.0,
+      "oracle": "reviewed_brute_force_v1",
+      "cases_available": 56,
+      "cases_executed": 56,
+      "cases_passed": 56,
+      "status": "passed_tests",
+      "failure": null
+    },
+    {
+      "schema_version": 1,
+      "problem": "derangements",
+      "candidate": "derangements_buggy.py",
+      "candidate_sha256": "d60a3ef04e164b791db060c594a13355f74e7b4789c0182d1f822344bf831ecf",
+      "seed": 42,
+      "random_cases_requested": 50,
+      "timeout_seconds": 2.0,
+      "oracle": "reviewed_brute_force_v1",
+      "cases_available": 9,
+      "cases_executed": 4,
+      "cases_passed": 3,
+      "status": "failed",
+      "failure": {
+        "case_index": 3,
+        "input": {
+          "n": 3
+        },
+        "expected": 2,
+        "actual": 4,
+        "kind": "wrong_answer",
+        "execution": {
+          "status": "ok",
+          "value": 4,
+          "stdout": "4\r\n",
+          "stderr": "",
+          "returncode": 0
+        }
+      }
+    },
+    {
+      "schema_version": 1,
+      "problem": "derangements",
+      "candidate": "derangements_fixed.py",
+      "candidate_sha256": "5bf53ac1cab871a46735f7f206ee9a1028f713c91b7328b9f9f11517c34e47f9",
+      "seed": 42,
+      "random_cases_requested": 50,
+      "timeout_seconds": 2.0,
+      "oracle": "reviewed_brute_force_v1",
+      "cases_available": 9,
+      "cases_executed": 9,
+      "cases_passed": 9,
+      "status": "passed_tests",
+      "failure": null
+    }
+  ]
+}

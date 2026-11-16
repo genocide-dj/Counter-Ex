@@ -1,0 +1,34 @@
+Repair the Python program using the observed failure. Return only Python source.
+Read one JSON object from stdin and print one JSON integer to stdout.
+Passing these tests is not a proof of correctness on larger inputs.
+
+Problem: Count permutations of 0..n-1 with no fixed points. Input: JSON {n: integer}. Output: one JSON integer. D(0) = 1.
+Observed failure:
+{
+  "case_index": 3,
+  "input": {
+    "n": 3
+  },
+  "expected": 2,
+  "actual": 4,
+  "kind": "wrong_answer",
+  "execution": {
+    "status": "ok",
+    "value": 4,
+    "stdout": "4\r\n",
+    "stderr": "",
+    "returncode": 0
+  }
+}
+
+Current program:
+```python
+"""Deliberately incorrect formula from the roadmap, with n=0 handled."""
+import json
+from math import factorial
+import sys
+
+n = json.load(sys.stdin)["n"]
+print(1 if n == 0 else factorial(n) - factorial(n - 1))
+
+```
