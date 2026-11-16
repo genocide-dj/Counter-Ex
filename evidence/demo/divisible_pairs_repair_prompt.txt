@@ -1,0 +1,38 @@
+Repair the Python program using the observed failure. Return only Python source.
+Read one JSON object from stdin and print one JSON integer to stdout.
+Passing these tests is not a proof of correctness on larger inputs.
+
+Problem: Count pairs i < j with (a[i] + a[j]) divisible by k. Input: JSON {a: integer array, k: positive integer}. Output: one JSON integer.
+Observed failure:
+{
+  "case_index": 2,
+  "input": {
+    "a": [
+      1,
+      2
+    ],
+    "k": 3
+  },
+  "expected": 1,
+  "actual": 2,
+  "kind": "wrong_answer",
+  "execution": {
+    "status": "ok",
+    "value": 2,
+    "stdout": "2\r\n",
+    "stderr": "",
+    "returncode": 0
+  }
+}
+
+Current program:
+```python
+"""Deliberate bug: counts each unordered pair twice."""
+import json
+import sys
+
+case = json.load(sys.stdin)
+a, k = case["a"], case["k"]
+print(sum((a[i] + a[j]) % k == 0 for i in range(len(a)) for j in range(len(a)) if i != j))
+
+```
